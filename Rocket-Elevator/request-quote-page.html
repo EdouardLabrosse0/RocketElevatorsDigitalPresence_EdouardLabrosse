@@ -144,8 +144,7 @@
 								</ul>
 
 							</nav>
-						</div>
-
+						</div>	
 					</div>
 				</header>
 				<!-- /Top Nav -->
@@ -179,12 +178,17 @@
 			</section>
 			<!-- /PAGE HEADER -->
 
-
-
-
+			<!-- style for the form backgound that's so cooool -->
+			<style>
+				.formBGRE {
+					background-image: url(AdobeStock_122227340.jpeg);
+					background-repeat: repeat-x;
+				}
+			</style>
+			<!-- /style for the form backgound that's so cooool -->
 
 			<!-- FORM -->
-			<section  data-background="AdobeStock_122227340.jpeg">
+			<section class="formBGRE">
 				<div class="container">
 
 
@@ -196,18 +200,20 @@
 
 
 						<!-- Fancy Elements -->
+
 						<div class="card card-default">
 							<div class="card-heading card-heading-transparent">
 								<h2 class="card-title bold">Request a quote</h2>
 							</div>
-
-							<div class="card-block">
+							
+							<div id="formSelection" class="card-block">
 
 								<!-- Type of building -->
 								<br />
-								<div id="typeBuilding">
+								<div>
 									<h5>Please select the type of building</h5>
-									<select class="form-control">
+									<select id="formBuilding" class="form-control">
+										<option value="0"> -- Select -- </option>
 										<option value="1">Residential</option>
 										<option value="2">Commercial</option>
 										<option value="3">Corporate</option>
@@ -215,6 +221,148 @@
 									</select>
 								</div>
 								<!-- /type of building -->
+
+
+								<!-- Residential -->
+								<div id="residentialSelection" onchange="ResultResidentialElevators()">
+
+										<h5>Number of appartement in the building</h5>
+									<div class="col-md-3">
+										<input id="Resnbrappartement" type="number" min="0" value="0" max="1000" class="formelementsRE">
+									</div>
+
+									<br>
+										<h5>Number of floors excluding basements floors</h5>
+									<div class="col-md-3">
+										<input id="Resnbrfloors" type="number" min="0" value="0" max="1000" class="formelementsRE">
+									</div>
+
+									<br>
+										<h5>Number of basement floors</h5>
+									<div class="col-md-3">
+										<input id="Resnbrbasements" type="number" min="0" value="0" max="1000" class="formelementsRE">
+									</div>
+
+								</div>
+								<!-- /Residential-->
+
+
+								<!-- Commercial -->
+								<div id="commercialSelection">
+									
+									<br>
+										<h5>Number of disctinct buisnesses</h5>
+									<div class="col-md-3">
+										<input id="comnbrbuisnesses" type="number" value="0" min="0" max="1000" class=" formelementsCOM">
+									</div>
+
+									<br>
+										<h5>Number of floors excluding basements floors</h5>
+									<div class="col-md-3">
+										<input id="comnbrfloors" type="number" value="0" min="0" max="1000" class="formelementsCOM">
+									</div>
+
+									<br>
+										<h5>Number of basement floors</h5>
+									<div class="col-md-3">
+										<input id="comnbrbasements" type="number" value="0" min="0" max="1000" class="formelementsCOM">
+									</div>
+
+									<br>
+										<h5>Number of parking space available</h5>
+									<div class="col-md-3">
+										<input id="comnbrparking" type="number" value="0" min="0" max="1000" class="formelementsCOM">
+									</div>
+
+									<br>
+										<h5>Number of elevator cages to be deployed</h5>
+									<div class="col-md-3">
+										<input id="comnbrcage" type="number" value="0" min="0" max="1000" class="formelementsCOM">
+									</div>
+
+
+								</div>
+								<!-- /Commercial -->
+
+
+								<!-- Corporate -->
+								<div id="corporateSelection">
+
+									<br>
+										<h5>Number of separate tenant compagnies</h5>
+									<div class="col-md-3">
+										<input id="Cnbrbuisnesses" value="0" type="number" min="0" max="1000" class="formelementsC">
+									</div>
+								
+									<br>
+										<h5>Number of floors excluding basements floors</h5>
+									<div class="col-md-3">
+										<input id="Cnbrfloors" value="0" type="number" min="0" max="1000" class="formelementsC">
+									</div>
+
+									<br>
+										<h5>Number of basement floors</h5>
+									<div class="col-md-3">
+										<input id="Cnbrbasements" type="number" value="0" min="0" max="1000" class="formelementsC">
+									</div>
+
+									<br>
+										<h5>Number of parking space available</h5>
+									<div class="col-md-3">
+										<input id="Cnbrparking" value="0" type="number" min="0" max="1000" class="formelementsC">
+									</div>
+
+									<br>
+										<h5>Maximum number of occupants per floor</h5>
+									<div class="col-md-3">
+										<input id="Cmaxnbrpeople" value="0" type="number" min="0" max="1000" class="formelementsC">
+									</div>
+							
+								</div>
+								<!-- /Corporate -->
+
+
+								<!-- hybrid -->
+								<div id="hybridSelection">
+
+									<br>
+										<h5>Number of disctinct buisnesses</h5>
+									<div class="col-md-3">
+										<input id="CHnbrbuisnesses" value="0" type="number" min="0" max="1000" class="formelementsCH">
+									</div>
+
+									<br>
+										<h5>Number of floors excluding basements floors</h5>
+									<div class="col-md-3">
+										<input id="CHnbrfloors" value="0" type="number" min="0" max="1000" class="formelementsCH">
+									</div>
+
+									<br>
+										<h5>Number of basement floors</h5>
+									<div class="col-md-3">
+										<input id="CHnbrbasements" value="0" type="number" min="0" max="1000" class="formelementsCH">
+									</div>
+
+									<br>
+										<h5>Number of parking space available</h5>
+									<div class="col-md-3">
+										<input id="CHnbrparking" value="0" type="number" min="0" max="1000" class="formelementsCH">
+									</div>
+
+									<br>
+										<h5>Maximum number of occupants per floor</h5>
+									<div class="col-md-3">
+										<input id="CHmaxnbrpeople" value="0" type="number" min="0" max="1000" class="formelementsCH">
+									</div>
+
+									<br>
+										<h5>Number of hours of activity per day</h5>
+									<div class="col-md-3">
+										<input id="CHnbrhours" type="number" min="0" max="24" class="formelementsCH">
+									</div>
+
+								</div>
+								<!-- /hybrid -->
 
 
 								<!-- Selection of Service type -->
@@ -239,6 +387,28 @@
 							</div>
 						</div>
 						<!-- /Fancy Elements -->
+
+
+						<!-- results -->
+						<div class="card card-default">
+							<div class="card-heading card-heading-transparent">
+								<h2 class="card-title bold">Technical estimates</h2>
+							</div>
+							<div class="card-block">
+	
+								<div id="alertnegativenum" class="alert alert-danger margin-bottom-30"><!-- DANGER -->
+									<strong>Ho no!</strong> It would seem you entered an unauthorized value in one of the fields above. (negative numbers)
+								</div>	
+
+								<div>
+									<h5>Number of elevators recommended</h5>
+									<input type="text" readonly class="form-control-plaintext border col-md-2" id="nbrelevators" value="0">
+								</div>
+	
+							</div>
+						</div>
+						<!-- results -->
+
 
 						</div>
 
@@ -496,7 +666,11 @@
 		<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
 
 		<script src="assets/js/scripts.js"></script>
-		<script src="Form.js"></script>
+		<script src="Form-hide-show.js"></script>
+		<script src="Form-estimate-residential.js"></script>
+		<script src="Form-estimate-commercial.js"></script>
+		<script src="Form-estimate-corp.js"></script>
+		<script src="Form-estimate-hybrid.js"></script>
 		
 		<!-- STYLESWITCHER - REMOVE -->
 		<script async src="demo_files/styleswitcher/styleswitcher.js"></script>
