@@ -203,7 +203,7 @@
 
 						<div class="card card-default">
 							<div class="card-heading card-heading-transparent">
-								<h2 class="card-title bold">Request a quote</h2>
+								<h2 class="bold">Request a quote</h2>
 							</div>
 							
 							<div id="formSelection" class="card-block">
@@ -211,7 +211,7 @@
 								<!-- Type of building -->
 								<br />
 								<div>
-									<h5>Please select the type of building</h5>
+									<h4>Please select the type of building</h4>
 									<select id="formBuilding" class="form-control">
 										<option value="0"> -- Select -- </option>
 										<option value="1">Residential</option>
@@ -367,20 +367,20 @@
 
 								<!-- Selection of Service type -->
 								<br />
-								<div id="cock">
-									<h5>Please select the type of service</h5>
+								<div>
+									<h4>Please select the type of service</h4>
 									<label class="radio">
-										<input type="radio" name="radio-btn" value="1" checked="checked">
+										<input id="standard" type="radio" name="radio-btn" value="1" class="serviceSelection">
 										<i></i> Standard
 									</label>
 
 									<label class="radio">
-										<input type="radio" name="radio-btn" value="1">
+										<input id="premium" type="radio" name="radio-btn" value="1" class="serviceSelection">
 										<i></i> Premium
 									</label>
 
 									<label class="radio">
-										<input type="radio" name="radio-btn" value="1">
+										<input id="excelium" type="radio" name="radio-btn" value="1" class="serviceSelection">
 										<i></i> Excelium
 									</label>
 								</div>
@@ -392,7 +392,7 @@
 						<!-- results -->
 						<div class="card card-default">
 							<div class="card-heading card-heading-transparent">
-								<h2 class="card-title bold">Technical estimates</h2>
+								<h2 class="bold">Technical estimates</h2>
 							</div>
 							<div class="card-block">
 	
@@ -401,14 +401,36 @@
 								</div>	
 
 								<div>
-									<h5>Number of elevators recommended</h5>
+									<h4>Number of elevators recommended</h4>
 									<input type="text" readonly class="form-control-plaintext border col-md-2" id="nbrelevators" value="0">
+								</div>
+
+								<br>
+								<h4>Rates</h4>
+								<div id="pricesdisplay" class="container">
+									<div class="row">
+										<div class="col">
+											<h5 class="text-center">Unit price</h5>
+											<input id="unitpricedisplay" type="text" readonly class="form-control-plaintext border col-md-12" value="0">
+										</div>
+										<div class="col">
+											<h5 class="text-center">Price of elevators</h5>
+											<input id="elevatorsprice" type="text" readonly class="form-control-plaintext border col-md-12" value="0">
+										</div>
+										<div class="col">
+											<h5 class="text-center">Cost of installations</h5>
+											<input id="instalcost" type="text" readonly class="form-control-plaintext border col-md-12" value="0">
+										</div>
+										<div class="col">
+											<h5 class="text-center">Total</h5>
+											<input id="totalfee" type="text" readonly class="form-control-plaintext border col-md-12" value="0">
+										</div>
+									</div>
 								</div>
 	
 							</div>
 						</div>
 						<!-- results -->
-
 
 						</div>
 
@@ -667,10 +689,8 @@
 
 		<script src="assets/js/scripts.js"></script>
 		<script src="Form-hide-show.js"></script>
-		<script src="Form-estimate-residential.js"></script>
-		<script src="Form-estimate-commercial.js"></script>
-		<script src="Form-estimate-corp.js"></script>
-		<script src="Form-estimate-hybrid.js"></script>
+		<script src="Form-estimate-nbrelevator.js"></script>
+		<script src="Form-estimate-rates.js"></script>
 		
 		<!-- STYLESWITCHER - REMOVE -->
 		<script async src="demo_files/styleswitcher/styleswitcher.js"></script>
